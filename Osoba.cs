@@ -19,7 +19,6 @@ namespace EsDnevnik2022
             InitializeComponent();
         }
 
-
         private void TextPopulate()
         {
             if (tabela.Rows.Count == 0)
