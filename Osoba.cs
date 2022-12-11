@@ -40,7 +40,7 @@ namespace EsDnevnik2022
             }
             btIzmeni.Enabled = true;
             btBrisi.Enabled = true;
-            int broj_sloga = (int)cbID.SelectedIndex;
+            int broj_sloga = cbID.SelectedIndex;
             tbIme.Text = tabela.Rows[broj_sloga][1].ToString();
             tbPrezime.Text = tabela.Rows[broj_sloga][2].ToString();
             tbAdresa.Text = tabela.Rows[broj_sloga][3].ToString();
