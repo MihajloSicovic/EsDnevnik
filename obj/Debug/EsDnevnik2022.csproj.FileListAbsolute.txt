@@ -22,3 +22,5 @@ C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDne
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\bin\Debug\EsDnevnik2022.exe.config
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\bin\Debug\EsDnevnik2022.exe
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\bin\Debug\EsDnevnik2022.pdb
+C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Glavna.resources
+C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Raspodela.resources

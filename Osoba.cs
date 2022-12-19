@@ -13,7 +13,7 @@ namespace EsDnevnik2022
 {
     public partial class Osoba : Form
     {
-        DataTable tabela;
+        DataTable osoba;
         public Osoba()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace EsDnevnik2022
 
         private void TextPopulate()
         {
-            if (tabela.Rows.Count == 0)
+            if (osoba.Rows.Count == 0)
             {
                 tbIme.Clear();
                 tbPrezime.Clear();
@@ -41,13 +41,13 @@ namespace EsDnevnik2022
             btIzmeni.Enabled = true;
             btBrisi.Enabled = true;
             int broj_sloga = cbID.SelectedIndex;
-            tbIme.Text = tabela.Rows[broj_sloga][1].ToString();
-            tbPrezime.Text = tabela.Rows[broj_sloga][2].ToString();
-            tbAdresa.Text = tabela.Rows[broj_sloga][3].ToString();
-            tbJMBG.Text = tabela.Rows[broj_sloga][4].ToString();
-            tbEmail.Text = tabela.Rows[broj_sloga][5].ToString();
-            tbLozinka.Text = tabela.Rows[broj_sloga][6].ToString();
-            tbUloga.Text = tabela.Rows[broj_sloga][7].ToString();
+            tbIme.Text = osoba.Rows[broj_sloga][1].ToString();
+            tbPrezime.Text = osoba.Rows[broj_sloga][2].ToString();
+            tbAdresa.Text = osoba.Rows[broj_sloga][3].ToString();
+            tbJMBG.Text = osoba.Rows[broj_sloga][4].ToString();
+            tbEmail.Text = osoba.Rows[broj_sloga][5].ToString();
+            tbLozinka.Text = osoba.Rows[broj_sloga][6].ToString();
+            tbUloga.Text = osoba.Rows[broj_sloga][7].ToString();
             btPrev.Enabled = true;
             btFirst.Enabled = true;
             btLast.Enabled = true;
@@ -57,40 +57,20 @@ namespace EsDnevnik2022
                 btPrev.Enabled = false;
                 btFirst.Enabled = false;
             }
-            if (broj_sloga == tabela.Rows.Count - 1)
+            if (broj_sloga == osoba.Rows.Count - 1)
             {
                 btLast.Enabled = false;
                 btNext.Enabled = false;
             }
         }
 
-        private bool DML(SqlConnection veza, SqlCommand komanda)
-        {
-            bool izvrseno = true;
-            try
-            {
-                veza.Open();
-                komanda.ExecuteNonQuery();
-                veza.Close();
-            }
-            catch (Exception Greska)
-            {
-                MessageBox.Show(Greska.Message);
-                izvrseno = false;
-            }
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM osoba", veza);
-            tabela.Clear();
-            da.Fill(tabela);
-            return izvrseno;
-        }
-
         private void Osoba_Load(object sender, EventArgs e)
         {
-            tabela = new DataTable();
+            osoba = new DataTable("osoba");
             SqlConnection veza = Konekcija.Connect();
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM osoba", veza);
-            da.Fill(tabela);
-            for (int i = 0; i < tabela.Rows.Count; i++) cbID.Items.Add(tabela.Rows[i][0]);
+            da.Fill(osoba);
+            for (int i = 0; i < osoba.Rows.Count; i++) cbID.Items.Add(osoba.Rows[i][0]);
             if (cbID.Items.Count > 0) cbID.SelectedIndex = 0;
             else TextPopulate();
         }
@@ -112,7 +92,7 @@ namespace EsDnevnik2022
 
         private void btLast_Click(object sender, EventArgs e)
         {
-            cbID.SelectedIndex = tabela.Rows.Count - 1;
+            cbID.SelectedIndex = osoba.Rows.Count - 1;
         }
 
         private void btIzmeni_Click(object sender, EventArgs e)
@@ -120,11 +100,9 @@ namespace EsDnevnik2022
             string naredba = "UPDATE osoba SET ";
             naredba += "ime = '" + tbIme.Text + "', prezime = '" + tbPrezime.Text + "', adresa = '" + tbAdresa.Text;
             naredba += "', jmbg = '" + tbJMBG.Text + "', email = '" + tbEmail.Text + "', pass = '" + tbLozinka.Text;
-            naredba += "', uloga ='" + tbUloga.Text + "'";
+            naredba += "', uloga = '" + tbUloga.Text + "'";
             naredba += "WHERE id = " + cbID.SelectedItem.ToString();
-            tabela = new DataTable();
-            SqlConnection veza = Konekcija.Connect();
-            if (!DML(veza, new SqlCommand(naredba, veza))) TextPopulate();
+            if (!Konekcija.DML(naredba, ref osoba)) TextPopulate();
         }
 
         private void btDodaj_Click(object sender, EventArgs e)
@@ -137,10 +115,9 @@ namespace EsDnevnik2022
             naredba += tbEmail.Text + "','";
             naredba += tbLozinka.Text + "','";
             naredba += tbUloga.Text + "')";
-            SqlConnection veza = Konekcija.Connect();
-            if (DML(veza, new SqlCommand(naredba, veza)))
+            if (Konekcija.DML(naredba, ref osoba))
             {
-                cbID.Items.Add(tabela.Rows[tabela.Rows.Count - 1][0]);
+                cbID.Items.Add(osoba.Rows[osoba.Rows.Count - 1][0]);
                 if (cbID.Items.Count == 1) cbID.SelectedIndex = 0;
                 else TextPopulate();
             }
@@ -153,9 +130,8 @@ namespace EsDnevnik2022
 
         private void btBrisi_Click(object sender, EventArgs e)
         {
-            SqlConnection veza = Konekcija.Connect();
             string naredba = "DELETE FROM osoba WHERE id = " + cbID.SelectedItem.ToString();
-            if (DML(veza, new SqlCommand(naredba, veza)))
+            if (Konekcija.DML(naredba, ref osoba))
             {
                 if (cbID.SelectedIndex == 0)
                 {
