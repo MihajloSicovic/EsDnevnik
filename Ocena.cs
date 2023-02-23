@@ -141,7 +141,8 @@ namespace EsDnevnik2022
                 veza.Close();
 
                 Ocena_Populate();
-                dgOcena.CurrentCell = dgOcena[1, dgOcena.RowCount - 1];
+                current_id = dgOcena.RowCount - 1;
+                dgOcena.CurrentCell = dgOcena[current_cellC, current_id];
                 btBrisi.Enabled = btPromeni.Enabled = true;
             }
             catch (Exception ex)
@@ -184,6 +185,7 @@ namespace EsDnevnik2022
                 {
                     if (current_id > 0) dgOcena.CurrentCell = dgOcena[current_cellC, --current_id];
                     else dgOcena.CurrentCell = dgOcena[current_cellC, current_id];
+                    SelectedRowChanged(current_id);
                 }
             }
             catch (Exception ex)
