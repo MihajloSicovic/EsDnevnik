@@ -12,21 +12,46 @@ namespace EsDnevnik2022
 {
     public partial class Glavna : Form
     {
-        public Glavna()
+        Login l;
+        public Glavna(Login l)
         {
+            this.l = l;
             InitializeComponent();
         }
 
         private void osobaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Osoba osoba = new Osoba();
-            osoba.ShowDialog();
+            Osoba nova = new Osoba();
+            nova.ShowDialog();
         }
 
-        private void raspodelaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void odeljenjeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Raspodela raspodela = new Raspodela();
-            raspodela.ShowDialog();
+            Odeljenje nova = new Odeljenje();
+            nova.ShowDialog();
+        }
+
+        private void smerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sifarnik FormaSifarnik = new Sifarnik("smer");
+            FormaSifarnik.Show();
+        }
+
+        private void skolskaGodinaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sifarnik FormaSifarnik = new Sifarnik("skolska_godina");
+            FormaSifarnik.Show();
+        }
+
+        private void Glavna_Load(object sender, EventArgs e)
+        {
+            l.Close();
+        }
+
+        private void ocene2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ocena FormaOcena = new Ocena();
+            FormaOcena.Show();
         }
     }
 }

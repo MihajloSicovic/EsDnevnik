@@ -11,10 +11,17 @@ D:\Mihajlo Sicovic\Baze Podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.pdb
 D:\Mihajlo Sicovic\Baze Podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Glavna.resources
 D:\Mihajlo Sicovic\Baze Podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Login.resources
 D:\Mihajlo Sicovic\Baze Podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Odeljenje.resources
+D:\Mihajlo Sicovic\Baze Podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Sifarnik.resources
+D:\Mihajlo Sicovic\Baze Podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Ocena2.resources
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.csproj.AssemblyReference.cache
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.csproj.SuggestedBindingRedirects.cache
+C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Glavna.resources
+C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Login.resources
+C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Ocena.resources
+C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Odeljenje.resources
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Osoba.resources
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Properties.Resources.resources
+C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Sifarnik.resources
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.csproj.GenerateResource.cache
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.csproj.CoreCompileInputs.cache
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.exe
@@ -22,5 +29,3 @@ C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDne
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\bin\Debug\EsDnevnik2022.exe.config
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\bin\Debug\EsDnevnik2022.exe
 C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\bin\Debug\EsDnevnik2022.pdb
-C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Glavna.resources
-C:\Users\Mihajlo\Documents\Mihajlo\4\Baze podataka\EsDnevnik2022\obj\Debug\EsDnevnik2022.Raspodela.resources
