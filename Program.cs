@@ -16,7 +16,7 @@ namespace EsDnevnik2022
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Ocena());
+            Application.Run(new Glavna());
         }
     }
 }

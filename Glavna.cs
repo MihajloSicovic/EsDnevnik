@@ -19,16 +19,21 @@ namespace EsDnevnik2022
             InitializeComponent();
         }
 
+        public Glavna()
+        {
+            InitializeComponent();
+        }
+
         private void osobaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Osoba nova = new Osoba();
-            nova.ShowDialog();
+            nova.Show();
         }
 
         private void odeljenjeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Odeljenje nova = new Odeljenje();
-            nova.ShowDialog();
+            nova.Show();
         }
 
         private void smerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,10 +50,10 @@ namespace EsDnevnik2022
 
         private void Glavna_Load(object sender, EventArgs e)
         {
-            l.Close();
+            //l.Close();
         }
 
-        private void ocene2ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void oceneToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Ocena FormaOcena = new Ocena();
             FormaOcena.Show();
